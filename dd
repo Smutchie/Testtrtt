@@ -1,0 +1,33 @@
+import discord
+import random
+
+TOKEN = 'NjEzNDQ2Njc3Nzc2NTY0MjI1.XVxC6g.RKHLTd1CnBgZpTU3K1EK1cLMEoA'
+
+prefix = '!'
+
+client =  discord.Client()
+
+@client.event
+async def on_ready():
+    print("Maxsa, Ready!")
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.lower().startswith(prefix + 'forbind'):
+        await message.channel.send('https://youtu.be/wy4MAl2zFEE'.format(message, client.user))
+
+    if message.content.lower().startswith(prefix + 'kanal'):
+        await message.channel.send('https://www.youtube.com/user/Maxsa33'.format(message, client.user))
+
+    if message.content.lower().startswith(prefix + 'udvikler'):
+        await message.channel.send('Hey! {0.author.mention}, Maxsa botten er kodet, af Smutch(c)!'.format(message, client.user))
+
+    if message.content.lower().startswith(prefix + 'stream'):
+        await message.channel.send('GG'.format(message, client.user))
+
+
+
+client.run('NjEzNDQ2Njc3Nzc2NTY0MjI1.XVxC6g.RKHLTd1CnBgZpTU3K1EK1cLMEoA')
